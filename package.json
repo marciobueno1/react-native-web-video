@@ -18,8 +18,10 @@
         "eslint-config-airbnb": "4.0.0"
     },
     "dependencies": {
-        "prop-types": "^15.5.10",
-        "react-native-web": "^0.3.2"
+        "prop-types": "^15.5.10"
+    },
+    "peerDependencies": {
+        "react-native-web": "*"
     },
     "scripts": {
         "test": "node_modules/.bin/eslint *.js"
