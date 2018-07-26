@@ -65,6 +65,7 @@ type NormalProps = {
 type Props = NormalProps;
 
 class Video extends Component<Props> {
+  state = { showPoster: true };
 
   setNativeProps(props: Object) {
     if (this._videoRef) {
