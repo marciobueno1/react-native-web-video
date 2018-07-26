@@ -23,6 +23,7 @@ type NormalProps = {
   onVideoFullscreenPlayerDidDismiss?: ?Function,
   onLoadStart?: ?Function,
   onLoad?: ?Function,
+  onPlay?: ?Function,
   onBuffer: ?Function,
   onError: ?Function,
   onProgress: ?Function,
@@ -84,6 +85,12 @@ class Video extends Component<Props> {
   _onLoad = (event) => {
     if (this.props.onLoad) {
       this.props.onLoad(event.nativeEvent);
+    }
+  };
+
+  _onPlay = (event) => {
+    if (this.props.onPlay) {
+      this.props.onPlay(event.nativeEvent);
     }
   };
 
@@ -210,6 +217,7 @@ class Video extends Component<Props> {
       src: source.uri || source,
       onLoadStart: this._onLoadStart,
       onLoadedData: this._onLoad,
+      onPlay: this._onPlay,
       onError: this._onError,
       onProgress: this._onProgress,
       onSeeking: this._onSeek,
@@ -266,6 +274,7 @@ Video.propTypes = {
   progressUpdateInterval: PropTypes.number,
   onLoadStart: PropTypes.func,
   onLoad: PropTypes.func,
+  onPlay: PropTypes.func,
   onBuffer: PropTypes.func,
   onError: PropTypes.func,
   onProgress: PropTypes.func,
