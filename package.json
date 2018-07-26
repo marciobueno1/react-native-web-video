@@ -1,6 +1,6 @@
 {
     "name": "react-native-web-video",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "A <Video /> element for react-native-web inspired in react-native-video",
     "main": "src/Video.js",
     "license": "MIT",

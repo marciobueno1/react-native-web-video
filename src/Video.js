@@ -35,7 +35,7 @@ type NormalProps = {
 
 
   // resizeMode: PropTypes.string,
-  // poster: PropTypes.string,
+  poster: PropTypes.string,
   // repeat: PropTypes.bool,
   // paused: PropTypes.bool,
   // muted: PropTypes.bool,
@@ -211,6 +211,7 @@ class Video extends Component<Props> {
       volume,
       controls,
       style,
+      poster,
     } = this.props;
 
     return createElement('video', {
@@ -228,6 +229,7 @@ class Video extends Component<Props> {
       volume,
       controls,
       style,
+      poster,
     });
   }
 }
