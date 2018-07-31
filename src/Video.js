@@ -33,6 +33,7 @@ type NormalProps = {
   onTouchMove: ?Function,
   onTouchEnd: ?Function,
   onTouchCancel: ?Function,
+  onClick: ?Function,
   width?: ?number,
   heigth?: ?number,
   style: ?PropTypes.StyleSheet,
@@ -230,6 +231,12 @@ class Video extends Component<Props> {
     }
   };
 
+  _onClick = (event) => {
+    if (this.props.onClick) {
+      this.props.onClick(event.nativeEvent);
+    }
+  };
+
   _captureRef = ref => {
     /* $FlowFixMe(>=0.53.0 site=react_native_fb,react_native_oss) This comment
      * suppresses an error when upgrading Flow's support for React. To see the
@@ -262,6 +269,7 @@ class Video extends Component<Props> {
       onTouchMove: this._onTouchMove,
       onTouchEnd: this._onTouchEnd,
       onTouchCancel: this._onTouchCancel,
+      onClick: this._onClick,
       volume,
       controls,
       style,
@@ -321,7 +329,8 @@ Video.propTypes = {
   onTouchStart: PropTypes.func,
   onTouchMove: PropTypes.func,
   onTouchEnd: PropTypes.func,
-  onTouchEnd: PropTypes.func,
+  onTouchCancel: PropTypes.func,
+  onClick: PropTypes.func,
   onFullscreenPlayerWillPresent: PropTypes.func,
   onFullscreenPlayerDidPresent: PropTypes.func,
   onFullscreenPlayerWillDismiss: PropTypes.func,
