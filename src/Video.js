@@ -259,7 +259,7 @@ class Video extends Component<Props> {
       onCanPlay: this._onReadyForDisplay,
       onStalled: this._onPlaybackStalled,
       onTouchStart: this._onTouchStart,
-      onTouchStart: this._onTouchStart,
+      onTouchMove: this._onTouchMove,
       onTouchEnd: this._onTouchEnd,
       onTouchCancel: this._onTouchCancel,
       volume,
